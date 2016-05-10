@@ -1,26 +1,23 @@
-angular.module('App')
+angular.module('App', [])
 
-.controller('AppCtrl', function($scope) {
+.controller('AppCtrl', ['$scope', function($scope) {
+	var weekMS = 7 * 1000 * 60 * 60 * 24;
+	$scope.day = new Date();
 
-})
+	$scope.up = function () {
+		$scope.day = $scope.day + weekMS;
+		return $scope.day;
+	}
 
-.directive('weekPicker', function ( $compile ) {
+	$scope.down = function () {
+		$scope.day = $scope.day - weekMS;
+		return $scope.day;
+	}
+}])
+
+.directive("weekPicker", function() {
 	return {
-		scope: true,
-		link: function (scope, element, attrs ) {
-			var el;
-
-			attrs.$observe( 'html', function ( tpl ) {
-				if ( tpl && angular.isDefined( tpl ) ) {
-					// compile the provided template against the current scope
-					el = $compile( tpl )(scope );
-					// stupid way of emptying the element
-					element.html("");
-
-					// add the template content
-					element.append( el );
-				}
-			});
-		}
+		restrict: 'E',
+		template : "<ul><li ng-click='down()'>&lt;</li><li>Week {{day.getWeek()}}, {{day.getFullYear()}}</li><li ng-click='up()'>&gt;</li></ul>"
 	};
-})
+});
