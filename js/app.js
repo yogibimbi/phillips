@@ -6,7 +6,6 @@ angular.module('App', [])
 
 	$scope.up = function () {
 		$scope.day = new Date(+$scope.day + weekMS);
-console.log($scope.day);
 	}
 
 	$scope.down = function () {
