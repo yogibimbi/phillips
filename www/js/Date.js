@@ -24,3 +24,12 @@ Date.prototype.timezone = function () {
 	var offsets = /GMT(.)(..)(..)/.exec("" + this);
 	return parseFloat(offsets[1] + offsets[2] + "." + (parseInt(offsets[3]) / 60));
 }
+
+Date.prototype.week = function (weekStartsMonday) {
+	var dayMS = 1000 * 60 * 60 * 24;
+	var week = {
+		start: new Date(+this - (this.weekDay(weekStartsMonday) - 1) * dayMS),
+		end: new Date(+this + (7 - this.weekDay(weekStartsMonday)) * dayMS)
+	}
+	return week;
+}
