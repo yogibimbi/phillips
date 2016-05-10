@@ -1,5 +1,6 @@
 /* damn! css is soooo tedious. But I feel a little bit too lazy to install scss for this */
 body ul {
+	width: 250px;
 	list-style: none;
 }
 week-picker > ul {
