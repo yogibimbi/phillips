@@ -1,0 +1,19 @@
+/* damn! css is soooo tedious. But I feel a little bit too lazy to install scss for this */
+week-picker > ul {
+	width: auto;
+	list-style: none;
+	background-color: 44b5fd;
+	color: white;
+	font-size: 16px;
+}
+week-picker > ul > li {
+	float: left;
+	padding: 1em;
+}
+week-picker > ul > li[ng-click] {
+	cursor: pointer;
+}
+week-picker > ul > li:last-of-type {
+	float: none;
+	clear:right;
+}
