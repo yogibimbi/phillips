@@ -1,0 +1,17 @@
+<html>
+<body ng-app="myApp">
+
+<week-picker></week-picker>
+
+<script src="js/angular.js"></script>
+<script>
+var app = angular.module("myApp", []);
+app.directive("weekPicker", function() {
+    return {
+        restrict: 'E',
+        template : "<div>week picker</div>"
+    };
+});
+</script>
+</body>
+</html>
