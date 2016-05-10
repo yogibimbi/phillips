@@ -1,17 +1,13 @@
 <html>
-<body ng-app="myApp">
+	<link rel="stylesheet" type="text/css" href="css/styles.css" />
+	<body ng-app="App">
 
-<week-picker></week-picker>
+		<div ng-controller="AppCtrl">
+			<week-picker></week-picker>
+		</div>
 
-<script src="js/angular.js"></script>
-<script>
-var app = angular.module("myApp", []);
-app.directive("weekPicker", function() {
-    return {
-        restrict: 'E',
-        template : "<div>week picker</div>"
-    };
-});
-</script>
-</body>
+		<script src="js/angular/angular.min.js"></script>
+		<script src="js/Date.js"></script>
+		<script src="js/app.js"></script>
+	</body>
 </html>
