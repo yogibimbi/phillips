@@ -5,19 +5,19 @@ angular.module('App', [])
 	$scope.day = new Date();
 
 	$scope.up = function () {
-		$scope.day = $scope.day + weekMS;
-		return $scope.day;
+		$scope.day = new Date(+$scope.day + weekMS);
+console.log($scope.day);
 	}
 
 	$scope.down = function () {
-		$scope.day = $scope.day - weekMS;
-		return $scope.day;
+		$scope.day = new Date(+$scope.day - weekMS);
 	}
 }])
 
 .directive("weekPicker", function() {
 	return {
+		transclude: true,
 		restrict: 'E',
-		template : "<ul><li ng-click='down()'>&lt;</li><li>Week {{day.getWeek()}}, {{day.getFullYear()}}</li><li ng-click='up()'>&gt;</li></ul>"
+		templateUrl : "views/week-picker.html"
 	};
 });
