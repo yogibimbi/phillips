@@ -3,7 +3,14 @@
 	<body ng-app="App">
 
 		<div ng-controller="AppCtrl">
-			<week-picker></week-picker>
+			<ul>
+				<li>
+					<week-picker></week-picker>
+				</li>
+				<li>
+					Week range {{day.week().start | date : 'dd/MM/yyyy'}} to {{day.week().end | date : 'dd/MM/yyyy'}}
+				</li>
+			</ul>
 		</div>
 
 		<script src="js/angular/angular.min.js"></script>

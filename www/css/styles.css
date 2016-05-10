@@ -1,6 +1,9 @@
 /* damn! css is soooo tedious. But I feel a little bit too lazy to install scss for this */
+body ul {
+	list-style: none;
+}
 week-picker > ul {
-	width: auto;
+	width: 100%;
 	list-style: none;
 	background-color: 44b5fd;
 	color: white;
