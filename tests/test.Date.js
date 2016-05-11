@@ -11,7 +11,7 @@ describe('Date', function(){
 		it("week day should be 1 (aka Tuesday)", function () {
 			expect(D.weekDay(true)).toEqual(1);
 		});
-		it("should be day 131 of the year", function () {
+		it("should be day 130 of the year", function () {
 			expect(D.days()).toEqual(130);
 		});
 	}); 
