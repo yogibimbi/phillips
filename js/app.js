@@ -14,6 +14,7 @@ angular.module('App', [])
 }])
 
 .directive("weekPicker", function() {
+console.log("IN WEEK PICKER DIRECTIVE");
 	return {
 		transclude: true,
 		restrict: 'E',
